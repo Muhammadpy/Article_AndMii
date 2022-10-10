@@ -1,0 +1,119 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Login Form</title>    
+    <link rel="stylesheet" type="text/css" href="css/style.css">    
+</head>    
+<body>    
+    <h2>Login Page</h2><br>    
+    <div class="login">    
+        {% for m in messages %}
+        <h3 class="text-{{ m.tags }}">{{m}}</h3>
+        {% endfor %}
+    <form id="login" method="post" action="">{% csrf_token %} 
+        
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input type="text" id="username" name="username"  placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input type="Password" id="password" name="password"  placeholder="Password">    
+        <br><br>
+        <div class="form-group">
+            <label for="">Parolni ko'rsatish</label>
+            <input type="checkbox" id="show_password">
+            </div>
+        <br>    
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success"> Sign in </button>
+       </div>      
+        <br>   
+        <input type="checkbox" id="show_password" id="check">    
+        <span>Remember me</span>
+        <br><br>    
+        
+        <div class="form-group">
+        <span>Ro'yxatdan o'tmadingizmi?</span> <a href="{% url 'follower:signup' %}"> Ro'yxatdan o'tish</a>
+        </div>
+        
+        
+
+    </form>     
+</div>    
+
+<script>
+    show_password.onchange = function(){
+        let value = this.value;
+        if(password.type=='text'){
+            password.type= 'password'
+    }else{
+        password.type = 'text'
+    }
+        
+   
+        
+    }
+</script>
+
+</body>
+</html>     
+<style>
+ 
+
+.login{  
+        width: 382px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 80px;  
+        background: #23463f;  
+        border-radius: 15px ;  
+          
+}  
+h2{  
+    text-align: center;  
+    color: #277582;  
+    padding: 20px;  
+}  
+label{  
+    color: #08ffd1;  
+    font-size: 17px;  
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#Pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#log{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: blue;  
+  
+  
+}  
+span{  
+    color: white;  
+    font-size: 17px;  
+}  
+a{  
+    float: right;  
+    background-color: grey;  
+}  
+</style>
